@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecopark – Gửi yêu cầu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav id="nav"></nav>
+  <div class="page">
+    <div class="container section-sm">
+      <div style="max-width:680px;margin:0 auto">
+        <a href="/dashboard.html" class="text-muted text-sm" style="display:inline-block;margin-bottom:1.5rem" data-vi="← Quay lại Dashboard" data-en="← Back to Dashboard">← Quay lại Dashboard</a>
+        <h1 style="font-size:1.6rem;font-weight:800;margin-bottom:.5rem" data-vi="Gửi yêu cầu bất động sản" data-en="Submit Property Request">Gửi yêu cầu bất động sản</h1>
+        <p class="text-muted mb-4" data-vi="Mô tả nhu cầu và ngân sách, chúng tôi sẽ lập báo đặt cọc cho bạn." data-en="Describe your needs and budget, we'll prepare a deposit quote for you.">Mô tả nhu cầu và ngân sách, chúng tôi sẽ lập báo đặt cọc cho bạn.</p>
+
+        <div id="alert-box"></div>
+
+        <div class="card">
+          <form id="request-form">
+            <!-- Loại giao dịch -->
+            <div class="form-group">
+              <label data-vi="Bạn muốn:" data-en="You want to:">Bạn muốn:</label>
+              <div class="radio-group">
+                <div class="radio-option selected" id="opt-buy" data-value="buy" data-vi="🏠 Mua" data-en="🏠 Buy">🏠 Mua</div>
+                <div class="radio-option" id="opt-rent" data-value="rent" data-vi="🔑 Thuê" data-en="🔑 Rent">🔑 Thuê</div>
+              </div>
+              <input type="hidden" id="req-type" value="buy" />
+            </div>
+
+            <!-- Loại bất động sản -->
+            <div class="form-group">
+              <label data-vi="Loại bất động sản:" data-en="Property type:">Loại bất động sản:</label>
+              <div class="radio-group">
+                <div class="radio-option selected" id="opt-apartment" data-value="apartment" data-vi="🏢 Căn hộ" data-en="🏢 Apartment">🏢 Căn hộ</div>
+                <div class="radio-option" id="opt-house" data-value="house" data-vi="🏡 Nhà mặt đất" data-en="🏡 Ground House">🏡 Nhà mặt đất</div>
+              </div>
+              <input type="hidden" id="req-property-type" value="apartment" />
+            </div>
+
+            <!-- Ngân sách -->
+            <div class="form-group">
+              <label data-vi="Ngân sách dự kiến" data-en="Estimated Budget">Ngân sách dự kiến</label>
+              <div class="range-wrap">
+                <input type="range" id="budget-slider" min="500000000" max="15000000000" step="100000000" value="3000000000" />
+                <div class="range-display" id="budget-display">3 tỷ</div>
+                <div class="currency-note" id="budget-usd"></div>
+              </div>
+            </div>
+
+            <!-- Số phòng ngủ -->
+            <div class="form-group">
+              <label data-vi="Số phòng ngủ mong muốn" data-en="Desired bedrooms">Số phòng ngủ mong muốn</label>
+              <select class="form-control" id="req-bedrooms">
+                <option value="0" data-vi="Studio (không phòng ngủ riêng)" data-en="Studio (no separate bedroom)">Studio (không phòng ngủ riêng)</option>
+                <option value="1" data-vi="1 phòng ngủ" data-en="1 bedroom">1 phòng ngủ</option>
+                <option value="2" selected data-vi="2 phòng ngủ" data-en="2 bedrooms">2 phòng ngủ</option>
+                <option value="3" data-vi="3 phòng ngủ" data-en="3 bedrooms">3 phòng ngủ</option>
+                <option value="4" data-vi="4+ phòng ngủ" data-en="4+ bedrooms">4+ phòng ngủ</option>
+              </select>
+            </div>
+
+            <!-- Khu vực ưa thích -->
+            <div class="form-group">
+              <label data-vi="Khu vực ưa thích" data-en="Preferred Zone">Khu vực ưa thích</label>
+              <select class="form-control" id="req-area">
+                <option value="" data-vi="-- Không bắt buộc --" data-en="-- Optional --">-- Không bắt buộc --</option>
+                <option value="Aqua Bay" data-vi="Aqua Bay (căn hộ cao tầng)" data-en="Aqua Bay (high-rise apartments)">Aqua Bay (căn hộ cao tầng)</option>
+                <option value="BellaVita" data-vi="BellaVita (biệt thự, nhà phố)" data-en="BellaVita (villas, townhouses)">BellaVita (biệt thự, nhà phố)</option>
+                <option value="Green Nest" data-vi="Green Nest (biệt thự ven hồ)" data-en="Green Nest (lakeside villas)">Green Nest (biệt thự ven hồ)</option>
+              </select>
+            </div>
+
+            <!-- Mô tả -->
+            <div class="form-group">
+              <label data-vi="Mô tả thêm về yêu cầu (tuỳ chọn)" data-en="Additional requirements (optional)">Mô tả thêm về yêu cầu (tuỳ chọn)</label>
+              <textarea class="form-control" id="req-description" rows="4" data-vi-ph="VD: Cần tầng cao, view hồ, gần trường học, có chỗ để xe..." data-en-ph="E.g.: High floor, lake view, near school, parking..."></textarea>
+            </div>
+
+            <div class="card" style="background:var(--accent-light);border-color:var(--accent);margin-bottom:1.25rem">
+              <div class="section-label" data-vi="Tiền đặt cọc dự kiến (10%)" data-en="Estimated Deposit (10%)">Tiền đặt cọc dự kiến (10%)</div>
+              <div style="font-size:1.6rem;font-weight:900;color:var(--accent)" id="deposit-preview">300 triệu</div>
+              <div class="currency-note" id="deposit-usd"></div>
+              <div class="text-muted text-sm mt-2" data-vi="Số tiền chính xác sẽ được xác nhận trong báo đặt cọc." data-en="Exact amount will be confirmed in the deposit quote.">Số tiền chính xác sẽ được xác nhận trong báo đặt cọc.</div>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width:100%" id="submit-btn" data-vi="📋 Gửi yêu cầu" data-en="📋 Submit Request">📋 Gửi yêu cầu</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="footer"></footer>
+  <script src="/js/supabase.min.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/page-request.js"></script>
+</body>
+</html>

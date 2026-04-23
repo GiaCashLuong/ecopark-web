@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecopark – Đăng nhập / Đăng ký</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="auth-left">
+      <div style="font-size:3.5rem;margin-bottom:1.5rem">🌿</div>
+      <h1 data-vi="Ecopark Real Estate" data-en="Ecopark Real Estate">Ecopark Real Estate</h1>
+      <p data-vi="Đăng nhập để xem danh sách yêu cầu, ký hợp đồng đặt cọc và thanh toán trực tuyến an toàn." data-en="Sign in to view your requests, sign deposit agreements and make secure online payments.">Đăng nhập để xem danh sách yêu cầu, ký hợp đồng đặt cọc và thanh toán trực tuyến an toàn.</p>
+      <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
+        <div style="background:rgba(255,255,255,.1);padding:.75rem 1.25rem;border-radius:10px;font-size:.85rem">✅ An toàn & bảo mật</div>
+        <div style="background:rgba(255,255,255,.1);padding:.75rem 1.25rem;border-radius:10px;font-size:.85rem">🔒 Mã hoá SSL</div>
+      </div>
+    </div>
+    <div class="auth-right">
+      <div class="auth-box">
+        <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:2rem">
+          <a href="/index.html" style="font-size:1.3rem;font-weight:800;color:var(--primary)">🌿 Eco<span style="color:var(--accent)">park</span></a>
+        </div>
+        <div class="auth-tabs">
+          <div class="auth-tab active" id="tab-login" data-vi="Đăng nhập" data-en="Sign In">Đăng nhập</div>
+          <div class="auth-tab" id="tab-register" data-vi="Đăng ký" data-en="Sign Up">Đăng ký</div>
+        </div>
+        <div id="alert-box"></div>
+
+        <!-- LOGIN FORM -->
+        <form id="login-form">
+          <div class="form-group">
+            <label data-vi="Email" data-en="Email">Email</label>
+            <input type="email" class="form-control" id="login-email" data-vi-ph="you@example.com" data-en-ph="you@example.com" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label data-vi="Mật khẩu" data-en="Password">Mật khẩu</label>
+            <input type="password" class="form-control" id="login-password" data-vi-ph="••••••••" data-en-ph="••••••••" placeholder="••••••••" required />
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%" id="login-btn" data-vi="Đăng nhập" data-en="Sign In">Đăng nhập</button>
+          <div style="text-align:center;margin-top:1rem">
+            <button type="button" id="forgot-btn" style="background:none;border:none;color:var(--primary);font-size:.875rem;cursor:pointer;font-family:inherit" data-vi="Quên mật khẩu?" data-en="Forgot password?">Quên mật khẩu?</button>
+          </div>
+        </form>
+
+        <!-- REGISTER FORM -->
+        <form id="register-form" style="display:none">
+          <div class="form-group">
+            <label data-vi="Họ và tên" data-en="Full Name">Họ và tên</label>
+            <input type="text" class="form-control" id="reg-name" data-vi-ph="Nguyễn Văn A" data-en-ph="Your full name" placeholder="Nguyễn Văn A" required />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" id="reg-email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label data-vi="Mật khẩu (tối thiểu 6 ký tự)" data-en="Password (min 6 chars)">Mật khẩu (tối thiểu 6 ký tự)</label>
+            <input type="password" class="form-control" id="reg-password" placeholder="••••••••" required />
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%" id="reg-btn" data-vi="Tạo tài khoản" data-en="Create Account">Tạo tài khoản</button>
+        </form>
+
+        <hr class="divider" />
+        <button id="google-btn" class="btn-outline" style="width:100%;justify-content:center">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" style="width:18px;height:18px" alt="Google" />
+          <span data-vi="Tiếp tục với Google" data-en="Continue with Google">Tiếp tục với Google</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/supabase.min.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/page-auth.js"></script>
+</body>
+</html>

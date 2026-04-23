@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecopark – Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav id="nav"></nav>
+  <div class="page">
+    <div class="container section-sm">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem">
+        <div>
+          <h1 style="font-size:1.6rem;font-weight:800" id="dash-greeting">Dashboard</h1>
+          <p class="text-muted text-sm" data-vi="Quản lý yêu cầu thuê/mua bất động sản của bạn" data-en="Manage your property rental/purchase requests">Quản lý yêu cầu thuê/mua bất động sản của bạn</p>
+        </div>
+        <a href="/request.html" class="btn-primary" data-vi="+ Yêu cầu mới" data-en="+ New Request">+ Yêu cầu mới</a>
+      </div>
+
+      <div class="dash-stats" id="dash-stats"></div>
+
+      <div id="alert-box"></div>
+      <div id="spinner" class="spinner"></div>
+
+      <div id="requests-section" style="display:none">
+        <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:1rem" data-vi="Yêu cầu của tôi" data-en="My Requests">Yêu cầu của tôi</h2>
+        <div id="requests-list"></div>
+      </div>
+    </div>
+  </div>
+  <footer id="footer"></footer>
+  <script src="/js/supabase.min.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/page-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecopark – Thanh toán thành công!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+  <nav id="nav"></nav>
+  <div class="page">
+    <div class="success-page">
+      <div>
+        <div class="success-icon">🎉</div>
+        <h1 style="font-size:2rem;font-weight:800;margin-bottom:.75rem" data-vi="Đặt cọc thành công!" data-en="Deposit Successful!">Đặt cọc thành công!</h1>
+        <p class="text-muted mb-4" data-vi="Chúc mừng! Yêu cầu đặt cọc của bạn đã được xác nhận. Chúng tôi sẽ liên hệ trong vòng 24 giờ." data-en="Congratulations! Your deposit request has been confirmed. We will contact you within 24 hours.">Chúc mừng! Yêu cầu đặt cọc của bạn đã được xác nhận. Chúng tôi sẽ liên hệ trong vòng 24 giờ.</p>
+        <div class="card" style="max-width:400px;margin:0 auto 2rem;text-align:left" id="receipt-box"></div>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <a href="/dashboard.html" class="btn-primary" data-vi="📋 Xem Dashboard" data-en="📋 View Dashboard">📋 Xem Dashboard</a>
+          <a href="/index.html" class="btn-outline" data-vi="🏠 Về trang chủ" data-en="🏠 Back to Home">🏠 Về trang chủ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/supabase.min.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/page-success.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecopark – Liên hệ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav id="nav"></nav>
+  <div class="page">
+    <div class="container section">
+      <div class="text-center mb-4">
+        <div class="section-tag" data-vi="Liên hệ" data-en="Contact Us">Liên hệ</div>
+        <h1 class="section-title" data-vi="Liên hệ với chúng tôi" data-en="Get in Touch">Liên hệ với chúng tôi</h1>
+        <p class="section-sub" data-vi="Chúng tôi luôn sẵn sàng tư vấn và hỗ trợ bạn tìm bất động sản phù hợp." data-en="We're always ready to advise and help you find the right property.">Chúng tôi luôn sẵn sàng tư vấn và hỗ trợ bạn tìm bất động sản phù hợp.</p>
+      </div>
+
+      <div class="contact-wrap">
+        <div>
+          <div class="info-item">
+            <div class="info-icon">📧</div>
+            <div>
+              <div class="info-label" data-vi="Email" data-en="Email">Email</div>
+              <div class="info-val">gsg.zero@gmail.com</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📞</div>
+            <div>
+              <div class="info-label" data-vi="Điện thoại" data-en="Phone">Điện thoại</div>
+              <div class="info-val">0797 986 525</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div>
+              <div class="info-label" data-vi="Địa chỉ" data-en="Address">Địa chỉ</div>
+              <div class="info-val" data-vi="Khu đô thị Ecopark, Văn Giang, Hưng Yên" data-en="Ecopark Urban Area, Van Giang, Hung Yen">Khu đô thị Ecopark, Văn Giang, Hưng Yên</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">⏰</div>
+            <div>
+              <div class="info-label" data-vi="Giờ làm việc" data-en="Working Hours">Giờ làm việc</div>
+              <div class="info-val" data-vi="Thứ 2 – Thứ 7, 8:00–18:00" data-en="Mon – Sat, 8:00–18:00">Thứ 2 – Thứ 7, 8:00–18:00</div>
+            </div>
+          </div>
+          <hr class="divider" />
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=75" alt="Ecopark" style="width:100%;border-radius:var(--radius-lg);height:180px;object-fit:cover" loading="lazy" />
+        </div>
+
+        <div class="card">
+          <h3 style="font-weight:700;margin-bottom:1.5rem" data-vi="Gửi tin nhắn" data-en="Send a Message">Gửi tin nhắn</h3>
+          <div id="alert-box"></div>
+          <form id="contact-form">
+            <div class="grid-2">
+              <div class="form-group">
+                <label data-vi="Họ và tên" data-en="Full Name">Họ và tên</label>
+                <input type="text" class="form-control" id="c-name" data-vi-ph="Nguyễn Văn A" data-en-ph="Your name" placeholder="Nguyễn Văn A" required />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" id="c-email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label data-vi="Số điện thoại (tuỳ chọn)" data-en="Phone (optional)">Số điện thoại (tuỳ chọn)</label>
+              <input type="tel" class="form-control" id="c-phone" data-vi-ph="0912 345 678" data-en-ph="0912 345 678" placeholder="0912 345 678" />
+            </div>
+            <div class="form-group">
+              <label data-vi="Chủ đề" data-en="Subject">Chủ đề</label>
+              <select class="form-control" id="c-subject">
+                <option data-vi="Tư vấn mua bất động sản" data-en="Property purchase advice">Tư vấn mua bất động sản</option>
+                <option data-vi="Tư vấn thuê bất động sản" data-en="Property rental advice">Tư vấn thuê bất động sản</option>
+                <option data-vi="Đặt lịch tham quan" data-en="Schedule a visit">Đặt lịch tham quan</option>
+                <option data-vi="Câu hỏi khác" data-en="Other question">Câu hỏi khác</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label data-vi="Nội dung" data-en="Message">Nội dung</label>
+              <textarea class="form-control" id="c-message" rows="5" data-vi-ph="Nội dung cần trao đổi..." data-en-ph="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%" id="send-btn" data-vi="Gửi tin nhắn" data-en="Send Message">Gửi tin nhắn</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="footer"></footer>
+  <script src="/js/supabase.min.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/page-contact.js"></script>
+</body>
+</html>

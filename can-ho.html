@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecopark – Căn hộ chung cư</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav id="nav"></nav>
+  <div class="page">
+    <!-- PAGE HERO -->
+    <div style="background:linear-gradient(135deg,#1B5E20,#2E7D32);padding:3.5rem 0;color:#fff;text-align:center">
+      <div class="container">
+        <div class="section-tag" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)" data-vi="Căn hộ chung cư" data-en="Apartments">Căn hộ chung cư</div>
+        <h1 style="font-size:2rem;font-weight:800;margin:.75rem 0" data-vi="Căn hộ cao cấp tại Ecopark" data-en="Premium Apartments at Ecopark">Căn hộ cao cấp tại Ecopark</h1>
+        <p style="opacity:.85" data-vi="Tầm nhìn hồ sinh thái, tiện ích đẳng cấp, thiết kế hiện đại" data-en="Eco-lake views, world-class amenities, modern design">Tầm nhìn hồ sinh thái, tiện ích đẳng cấp, thiết kế hiện đại</p>
+      </div>
+    </div>
+
+    <div class="container section-sm">
+      <!-- FILTER -->
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2rem;align-items:center">
+        <select class="form-control" style="width:auto" id="filter-type">
+          <option value="all" data-vi="Tất cả" data-en="All">Tất cả</option>
+          <option value="buy" data-vi="Mua" data-en="Buy">Mua</option>
+          <option value="rent" data-vi="Thuê" data-en="Rent">Thuê</option>
+        </select>
+        <select class="form-control" style="width:auto" id="filter-bed">
+          <option value="all" data-vi="Tất cả phòng ngủ" data-en="All bedrooms">Tất cả phòng ngủ</option>
+          <option value="0" data-vi="Studio" data-en="Studio">Studio</option>
+          <option value="1" data-vi="1 phòng ngủ" data-en="1 bedroom">1 phòng ngủ</option>
+          <option value="2" data-vi="2 phòng ngủ" data-en="2 bedrooms">2 phòng ngủ</option>
+          <option value="3" data-vi="3+ phòng ngủ" data-en="3+ bedrooms">3+ phòng ngủ</option>
+        </select>
+        <span id="result-count" class="text-muted text-sm"></span>
+      </div>
+
+      <div class="grid-4" id="apartments-grid"></div>
+    </div>
+
+    <!-- CTA -->
+    <div style="background:var(--primary-pale);padding:3rem 0;text-align:center">
+      <div class="container">
+        <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:.75rem" data-vi="Không tìm thấy căn phù hợp?" data-en="Can't find the right unit?">Không tìm thấy căn phù hợp?</h2>
+        <p class="text-muted mb-2" data-vi="Gửi yêu cầu với ngân sách của bạn, chúng tôi sẽ tư vấn ngay." data-en="Send your budget requirements and we'll advise you right away.">Gửi yêu cầu với ngân sách của bạn, chúng tôi sẽ tư vấn ngay.</p>
+        <a href="/request.html" class="btn-primary" data-vi="Gửi yêu cầu tư vấn" data-en="Send Inquiry">Gửi yêu cầu tư vấn</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal-overlay" class="modal-overlay" style="display:none">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-name" style="font-weight:700"></h3>
+        <button class="modal-close" id="modal-close">✕</button>
+      </div>
+      <img id="modal-img" class="modal-img" alt="" />
+      <div class="modal-body">
+        <div id="modal-body-content"></div>
+        <a href="/request.html" class="btn-primary" style="width:100%;text-align:center;margin-top:1.25rem;display:block" data-vi="📋 Gửi yêu cầu đặt cọc" data-en="📋 Send Deposit Request">📋 Gửi yêu cầu đặt cọc</a>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer"></footer>
+  <script src="/js/supabase.min.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/page-can-ho.js"></script>
+</body>
+</html>
