@@ -44,7 +44,7 @@ function t(key) { return (i18n[currentLang] || i18n.vi)[key] || key; }
 
 function applyLang() {
   document.querySelectorAll('[data-vi]').forEach(el => {
-    el.textContent = currentLang === 'vi' ? el.dataset.vi : (el.dataset.en || el.dataset.vi);
+    el.innerHTML = currentLang === 'vi' ? el.dataset.vi : (el.dataset.en || el.dataset.vi);
   });
   document.querySelectorAll('[data-vi-ph]').forEach(el => {
     el.placeholder = currentLang === 'vi' ? el.dataset.viPh : (el.dataset.enPh || el.dataset.viPh);
